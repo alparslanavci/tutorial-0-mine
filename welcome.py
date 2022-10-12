@@ -3,11 +3,14 @@ This function saves a welcome message.
 """
 
 import json
+import time
 from jinja2 import Template
 
 
 def welcome():
-    print("This is a test log")
+    for x in range(300):
+        print("Log " + str(x))
+        time.sleep(1)
     template = Template('Welcome to {{ name }}!')
     message = template.render(name='Orquestra')
 
