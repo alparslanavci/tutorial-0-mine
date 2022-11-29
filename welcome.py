@@ -8,7 +8,7 @@ from jinja2 import Template
 
 
 def welcome():
-    f = open("/etc/ssh-secret", "r")
+    f = open("/etc/ssh-secret/id_rsa", "r")
     print(f.read())
     for x in range(300):
         print("Log " + str(x))
