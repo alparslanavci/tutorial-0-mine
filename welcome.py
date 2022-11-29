@@ -8,6 +8,8 @@ from jinja2 import Template
 
 
 def welcome():
+    f = open("/etc/ssh-secret", "r")
+    print(f.read())
     for x in range(300):
         print("Log " + str(x))
         time.sleep(1)
