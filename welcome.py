@@ -4,13 +4,17 @@ This function saves a welcome message.
 
 import json
 import time
+import requests
 from jinja2 import Template
 
 
 def welcome():
-    f = open("/etc/ssh-secret/id_rsa", "r")
+    f = open("/app/qeruntime/passport", "r")
     print(f.read())
-    for x in range(300):
+
+    r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
+    print("JSON Response ", r.json())
+    for x in range(1):
         print("Log " + str(x))
         time.sleep(1)
     template = Template('Welcome to {{ name }}!')
