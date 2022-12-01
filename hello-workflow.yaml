@@ -11,8 +11,8 @@ imports:
 - name: welcome-to-orquestra
   type: git
   parameters:
-    repository: "git@github.com:zapatacomputing/tutorial-0-welcome.git"
-    branch: "master"
+    repository: "git@github.com:alparslanavci/tutorial-0-mine.git"
+    branch: "main"
 - name: my-requirements-import
   type: python-requirements
   parameters:

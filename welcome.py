@@ -9,7 +9,7 @@ from jinja2 import Template
 
 
 def welcome():
-    f = open("/app/qeruntime/passport", "r")
+    f = open("/app/iam/passport", "r")
     print(f.read())
 
     r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
