@@ -14,7 +14,7 @@ def welcome():
 
     r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
     print("JSON Response ", r.json())
-    for x in range(1):
+    for x in range(300):
         print("Log " + str(x))
         time.sleep(1)
     template = Template('Welcome to {{ name }}!')
