@@ -5,11 +5,12 @@ This function saves a welcome message.
 import json
 import time
 import requests
+import os
 from jinja2 import Template
 
 
 def welcome():
-    f = open("/app/iam/passport", "r")
+    f = open(os.environ.get('ORQUESTRA_PASSPORT_FILE'), "r")
     r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
     print("JSON Response ", r.json())
     for x in range(150):
