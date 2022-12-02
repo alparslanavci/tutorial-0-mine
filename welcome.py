@@ -10,7 +10,7 @@ from jinja2 import Template
 
 
 def welcome():
-    f = open(os.environ.get('ORQUESTRA_PASSPORT_FILE'), "r")
+    f = open(os.environ['ORQUESTRA_PASSPORT_FILE'], "r")
     r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
     print("JSON Response ", r.json())
     for x in range(150):
