@@ -13,7 +13,11 @@ def welcome():
     print(os.environ['ORQUESTRA_PASSPORT_FILE'])
     file = os.environ['ORQUESTRA_PASSPORT_FILE']
     f = open('' + file, "r")
-    r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f.read()})
+    print(f.read())
+    f.close()
+    f1 = open('' + file, "r")
+    print(f1.read())
+    r=requests.get("http://config-service.config-service:8099/api/config/secrets", headers={"Authorization":"Bearer " + f1.read()})
     print("JSON Response ", r.json())
     for x in range(150):
         print("Log " + str(x))
